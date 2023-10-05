@@ -1,0 +1,46 @@
+﻿body {
+    margin:0;
+}
+#div-top{
+    height:60px;
+    background-color:deeppink;
+}
+#div-banner {
+    height: 60px;
+    width: 100%;
+    background-color: ivory;
+    vertical-align:bottom;
+}
+#div-bar{
+    height:150px;
+    width:100%;
+    font-size:20px;
+    font-family:Arial;
+}
+#div-contain{
+    width:100%;
+    height:auto;
+    background-color:lightblue;
+    margin-bottom:5px;
+    padding-bottom:5px;
+}
+#div-footer{
+    height:200px;
+    background-color:floralwhite;
+    bottom:5px;
+    padding-top:25px;
+    display:flex;
+    flex-direction:row;
+}
+#div-left{
+    width:40%;
+    height:auto;
+}
+#div-right{
+    width:auto;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    text-align:left;
+}
+
