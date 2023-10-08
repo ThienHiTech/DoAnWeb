@@ -1,0 +1,66 @@
+﻿
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/MasterLayout.cshtml";
+    <script language="Javascript">
+        function Phanhoi() {
+            if (document.getElementById('tong').value <= 0 || document.getElementById('tong').value == null)
+            {
+                alert("Giỏ hàng đang trống, vui lòng lựa chọn sản phẩm");
+            }
+            if (document.getElementById('tong').value > 0)
+            {
+                confirm("Xác nhận thanh toán?");
+            }
+        }
+    </script>
+}
+
+<div style="margin-left:20px">
+    <h2>Đơn hàng</h2>
+        <table border="1">
+            <tr>
+                <td>STT</td>
+                <td style="width:200px">Tên Hàng</td>
+                <td style="width:75px">Đơn giá</td>
+                <td style="width:75px">Số lượng</td>
+                <td style="width:75px">Tổng tiền</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Sách A</td>
+                <td><input type="number" id="don1" name="don1" /></td>
+                <td><input type="number" id="sl1" name="sl1" onkeyup="ThanhTien1.value = parseFloat(don1.value) * parseFloat(sl1.value)" /></td>
+                <td><input type="number" id="ThanhTien1" name="ThanhTien1" /></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Sách B</td>
+                <td><input type="number" id="don2" name="don2" /></td>
+                <td><input type="number" id="sl2" name="sl2" onkeyup="ThanhTien2.value = parseFloat(don2.value) * parseFloat(sl2.value)" /></td>
+                <td><input type="number" id="ThanhTien2" name="ThanhTien2" /></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sách C</td>
+                <td><input type="number" id="don3" name="don3" /></td>
+                <td><input type="number" id="sl3" name="sl3" onkeyup="ThanhTien3.value = parseFloat(don3.value) * parseFloat(sl3.value)" /></td>
+                <td><input type="number" id="ThanhTien3" name="ThanhTien3" /></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Sách D</td>
+                <td><input type="number" id="don4" name="don4" /></td>
+                <td><input type="number" id="sl4" name="sl4" onkeyup="ThanhTien4.value = parseFloat(don4.value) * parseFloat(sl4.value)" /></td>
+                <td><input type="number" id="ThanhTien4" name="ThanhTien4" /></td>
+            </tr>
+        </table>
+    <div>
+       
+            <p>Chương trình khuyến mãi &nbsp;<input type="number" id="km" name="km" onchange="tong.value = parseFloat(ThanhTien1.value) + parseFloat(ThanhTien2.value) + parseFloat(ThanhTien3.value) + parseFloat(ThanhTien4.value) - parseFloat(km.value)" /></p>
+            <p>Tổng tiền&nbsp;<input type="number" id="tong" name="tong" /></p>
+    </div>
+    <br />
+    <input type="button" id="xacnhan" name="xacnhan" value="Xác nhận" onclick="Phanhoi()" />
+</div>
+
